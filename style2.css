@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+     
+}
+
+span {
+    font-family: cursive;
+    font-weight: 100px;
+    color: rgb(42, 181, 236);
+}
+
+.wall {
+    border: 1px solid rgb(169, 169, 169);
+    height: 650px;
+    width: 25%;
+    overflow: hidden;
+    padding: 20px;
+    background-color: rgb(224, 222, 222);
+}
+
+img {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.demo {
+
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    height: 42px;
+    width: 29%;
+    display: flex;
+    background-color: rgb(169, 169, 169);
+    justify-content: center;
+    align-items: center;
+    margin: 0px -11px
+}
+
+.demo:nth-child(1) {
+    clip-path: polygon(19% 0, 75% 0%, 100% 50%, 75% 100%, 19% 100%);
+}
+
+.demo:nth-child(5) {
+    clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 41% 49%);
+    width: 90px;
+    margin: 10px -24px;
+}
+
+h4 {
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 18px;
+    margin:  10px 0; 
+}
+
+
+.small label{
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+ .mycheckbox {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 13px;
+
+} 
+
+.mycheckbox input {
+    width: 20px;
+    height: 35px;
+
+}
+
+.mycheckbox label {
+    margin: 10px 20px;
+
+
+}
+.mycheckbox label > span{
+    font-size: 10px;
+    color: black;
+}
+
+.base{
+    margin: 20px;
+}
+.icons span{
+    color: white;
+    width: 0px;
+    height: 0px;
+    padding: 15px;
+    border-radius: 100px;
+    background-color:#adcc05;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px ;
+}
+.small input{
+    padding: 10px;
+   
+}
+
+.btn {
+    width: 100%;
+   
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+a {
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 33px;
+    background-color: rgb(42, 181, 236);
+    color: white;
+}
+.demo.active{
+    background-color: red;
+}

@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+span {
+    font-family: cursive;
+    font-weight: 100px;
+    color: rgb(42, 181, 236);
+}
+.demo.active{
+    background-color: red;
+}
+
+.wall {
+    border: 1px solid rgb(169, 169, 169);
+    height: 650px;
+    width: 25%;
+    overflow: hidden;
+    padding: 20px;
+    background-color: rgb(224, 222, 222);
+}
+
+img {
+    width: 100%;
+    margin-bottom: 40px;
+
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.demo {
+
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    height: 42px;
+    width: 29%;
+    display: flex;
+    background-color: rgb(169, 169, 169);
+    justify-content: center;
+    align-items: center;
+    margin: 0px -11px
+}
+
+.demo:nth-child(1) {
+    clip-path: polygon(19% 0, 75% 0%, 100% 50%, 75% 100%, 19% 100%);
+}
+
+.demo:nth-child(5) {
+    clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 41% 49%);
+    width: 90px;
+    margin: 10px -24px;
+}
+
+h4 {
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.wrapper {
+    border: 5px solid rgb(109, 171, 17);
+    border-radius: 100px;
+    width: 50%;
+    height: 200px;
+    margin: 60px;
+}
+
+.wrapper {
+
+
+    /* border: 5px solid rgb(109, 171, 17); */
+    border-radius: 90px;
+    width: 55%;
+    height: 180px;
+    margin: 60px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+a {
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 33px;
+    background-color: rgb(42, 181, 236);
+    color: white;
+}
+
+
+
+
+.hourglass {
+    display: block;
+    background: rgb(109, 171, 17);
+    margin: 3em auto;
+    width: 2em;
+    height: 4em;
+    animation: hourglass 1s linear infinite;
+}
+
+.outer {
+    fill: rgb(109, 171, 17);
+}
+
+.middle {
+    fill: rgb(218, 225, 208);
+}
+
+@keyframes hourglass {
+    0% {
+        transform: rotate(0deg);
+        box-shadow:
+            inset fill 0 -0em 0 0,
+            inset rgb(109, 171, 17) 0 -2em 0 0,
+            inset fill 0 -4em 0 0;
+    }
+
+    80% {
+        transform: rotate(0deg);
+        box-shadow:
+            inset fill 0 -2em 0 0,
+            inset rgb(109, 171, 17) 0 -2em 0 0,
+            inset fill 0 -2em 0 0;
+    }
+
+    100% {
+        transform: rotate(180deg);
+        box-shadow:
+            inset fill 0 -2em 0 0,
+            inset rgb(109, 171, 17) 0 -2em 0 0,
+            inset fill 0 -2em 0 0;
+    }
+}

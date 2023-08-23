@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+span {
+    font-family: cursive;
+    font-weight: 100px;
+    color: rgb(42, 181, 236);
+}
+.demo.active{
+    background-color: red;
+}
+.wall {
+    border: 1px solid rgb(169, 169, 169);
+    height: 650px;
+    width: 25%;
+    overflow: hidden;
+    padding: 20px;
+    background-color: rgb(224, 222, 222);
+}
+
+img {
+    width: 100%;
+
+
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.demo {
+
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    height: 42px;
+    width: 29%;
+    display: flex;
+    background-color: rgb(169, 169, 169);
+    justify-content: center;
+    align-items: center;
+    margin: 0px -11px
+}
+
+.demo:nth-child(1) {
+    clip-path: polygon(19% 0, 75% 0%, 100% 50%, 75% 100%, 19% 100%);
+}
+
+.demo:nth-child(5) {
+    clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 41% 49%);
+    width: 90px;
+    margin: 10px -24px;
+}
+
+.header {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5 {
+    width: 50%;
+    padding: 5px 30px 0px 0px;
+
+}
+
+h3 {
+    font-size: 16px;
+    margin: 2px 0;
+}
+
+h4 {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.container .last {
+    width: 40%;
+    padding: 2px;
+}
+
+.last a {
+    background-color: white;
+    color: black;
+}
+
+.last a :active {
+    background-color: rgb(79, 189, 79);
+}
+
+.wrapper-box {
+    position: relative;
+}
+
+.big {
+    background-color: red;
+    color: white;
+    opacity: 0.8;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+
+
+}
+
+p {
+    text-align: end;
+    font-size: 12px;
+    padding: 2px 5px;
+    color: black;
+    z-index: 1;
+}
+
+.big::before {
+
+    content: '';
+    width: 50px;
+    height: 33px;
+    top: -27px;
+    background-color: red;
+    position: absolute;
+    clip-path: polygon(0 100%, 0 21%, 58% 99%);
+    right: -17px;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.middle-1 {
+    background-color: rgb(29, 167, 221);
+    opacity: 0.8;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin: 2px;
+
+}
+
+.middle-1::before {
+    content: '';
+    width: 50px;
+    height: 30px;
+    top: -27px;
+    background-color: rgb(29, 167, 221);
+    position: absolute;
+    clip-path: polygon(0 100%, 0 21%, 58% 99%);
+    right: -17px;
+}
+
+.middle-2 {
+    background-color: rgb(109, 171, 17);
+    opacity: 0.8;
+    width: 100%;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.middle-2::before {
+    content: '';
+    width: 50px;
+    height: 33px;
+    top: -27px;
+    background-color: rgb(109, 171, 17);
+    position: absolute;
+    clip-path: polygon(0 100%, 0 21%, 58% 99%);
+    right: -17px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    padding-right:   5px 0px;
+    text-align: center;
+    justify-content: space-between;
+ 
+    color: white;
+}
+
+button  {
+  
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 33px;
+    background-color: white;
+    font-size: 17px;
+    border: 1px solid gray;
+
+
+}
+.last button:active{
+    background-color:rgb(109, 171, 17); 
+}
+.butt a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 33px;
+    color: white;
+    background-color: rgb(42, 181, 236);
+}
+
+
+.container-box{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.imagecontainer{
+height: 253px;
+width: 205px;
+padding: 42px 0;
+
+/* visibility: hidden; */
+
+}
+.imagecontainer img{
+    height: 120px;
+    opacity: 0;     
+}                           
+.imagecontainer p{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+
+
