@@ -30,7 +30,7 @@
                 <label for="Natural gas">Natural gas</label>
                 <div class="oil">
                     <small>Area in m3</small>
-                    <input type="text">
+                    <input type="text" class="text1">
                 </div>
             </div>
 
@@ -39,33 +39,91 @@
 
                 <div class="oil">
                     <small>Area in litre</small>
-                    <input type="text">
+                    <input type="text" class="text2">
                 </div>
             </div>
         </form>
         <div class="consumption">
             <h4>I don't know the consumption</h4>
             <div class="mycheckbox">
-                <input type="checkbox" id="myCheckbox" name="myCheckbox">
+                <input type="checkbox" id="myCheckbox" class="checkbox1" name="myCheckbox">
                 <label for="myCheckbox">Natural gas</label><br>
             </div>
             <div class="mycheckbox">
-                <input type="checkbox" id="myCheckbox" name="myCheckbox">
+                <input type="checkbox" id="myCheckbox"  class="checkbox2" name="myCheckbox">
                 <label for="myCheckbox">Heating oil</label><br>
             </div>
 
 
             <div class="btn">
                 <div class=".button">
-                    <a href="./index2.html"><i class="material-icons">chevron_left</i>Back</a>
+                    <a  href="./index2.html"><i class="material-icons">chevron_left</i>Back</a>
                 </div>
-                <div class="button">
-                    <a href="./index4.html">Forward <i class="material-icons">chevron_right</i></a>
+                <div class="button" id="abc">
+                    <a  href="./index4.html" >Forward <i class="material-icons " >chevron_right</i></a>
 
                 </div>
             </div>
     </div>
-    
+   
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const inputs = document.querySelectorAll('input[type="text"]');
+          let prevent = true;
+
+
+        
+     
+         
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+            if (this.checked) {
+              checkboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                  otherCheckbox.disabled = true;
+                }
+              });
+              inputs.forEach(input => {
+                input.disabled = true;
+              });
+        
+            } else {
+              checkboxes.forEach(otherCheckbox => {
+                otherCheckbox.disabled = false;
+              });
+              inputs.forEach(input => {
+                input.disabled = false;
+              });
+            }
+          });
+        });
+        
+
+       
+        inputs.forEach(input => {
+          input.addEventListener('input', function() {
+            if (this.value!=='') {
+              inputs.forEach(otherinput => {
+                if (otherinput !== this) {
+                  otherinput.disabled = true;
+                }
+              });
+                 checkboxes.forEach(checkbox => {
+                checkbox.disabled = true;
+              });
+        
+            } else {
+              inputs.forEach(otherinput => {
+                otherinput.disabled = false;
+              });
+              checkboxes.forEach(checkbox => {
+                checkbox.disabled = false;
+              });
+            }
+          });
+        });
+       
+        </script>
 </body>
 
 </html>
