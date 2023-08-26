@@ -28,6 +28,7 @@ span {
     overflow: hidden;
     padding: 20px;
     background-color: rgb(224, 222, 222);
+    position: relative;
 }
 
 img {
@@ -151,4 +152,19 @@ a {
     padding: 0 33px;
     background-color: rgb(42, 181, 236);
     color: white;
+}
+.popup{
+    background-color: black;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 300px;
+    left: 50px;
+    right: 50px;
+    padding: 40px;
+}
+.close{
+   margin: 20px; 
+   padding: 5px;
 }

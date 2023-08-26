@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./style7.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
-
+ 
+    
 </head>
 
 <body>
@@ -72,12 +73,110 @@
 
             <div class="btn">
                 <div class=".button">
-                    <a href="./index6.html"><i class="material-icons">chevron_left</i>Back</a>
+                    <a href="#" id="index6" class="disabled" ><i class="material-icons">chevron_left</i>Back</a>
                 </div>
             </div>
         </div>
+        <div class="popup" id="popup" style="display:none">
+            <p>Please select any of them</p>
+            <button  class="close">ok</button>
+        </div>
     </div>
-    <script src="./script1.js"></script>
+    <script>
+
+
+
+
+
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const texts = document.querySelector('input[type="text"]');
+const popup = document.getElementById('popup');
+
+
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            checkboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== this) {
+                    otherCheckbox.disabled = true;
+
+                }
+
+            });
+            enabletag();
+            texts.disabled = true;
+         
+            
+              
+
+        } else {
+            checkboxes.forEach(otherCheckbox => {
+                otherCheckbox.disabled = false;
+
+            });
+            disabletag();
+            texts.disabled = false;
+          
+           
+        }
+    });
+});
+
+
+        const index7= document.getElementById('index6');
+        
+        
+        index7.addEventListener('click',(e)=>{
+          e.preventDefault();
+          if (!index7.classList.contains('disabled')) {
+      window.location.href ='./index6.html'
+   
+          }
+        });
+   
+   
+   
+        // To disable the anchor tag
+   function disabletag() {
+       index7.classList.add('disabled');
+      
+     }
+   
+     // To enable the anchor tag
+     function enabletag() {
+       index7.classList.remove('disabled');
+     }
+     
+//    POPUP
+
+index7.addEventListener('click', (e) => {
+    e.preventDefault();
+    // const confirmation = confirm('please select something');
+   
+    if (index7.classList.contains('disabled')) {
+        document.getElementById('popup').style.display = "block";
+        // confirm('please select something');
+      }
+    });
+
+    
+    //    close button in popup
+     
+    const closebutton = document.querySelector('.close');
+    
+
+    closebutton.addEventListener('click', (e)=>{
+        popup.style.display = "none";
+        e.preventDefault();
+    })
+
+
+
+       </script>
+   
+    
+   
 </body>
 
 </html>

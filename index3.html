@@ -2,128 +2,184 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style3.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style3.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
 
 </head>
 
 <body>
-    <div class="wall">
-        <div class="drywall">
-            <h1><span>Drywall</span></h1>
-            <div class="icons">
-                <div class="demo">1</div>
-                <div class="demo active">2</div>
-                <div class="demo">3</div>
-                <div class="demo">4</div>
-                <div class="demo">5</div>
-            </div>
-            <h5>Information about energy consumption</h5>
-            <img src="./images/line1 (1).png" alt="">
+  <div class="wall">
+    <div class="drywall">
+      <h1><span>Drywall</span></h1>
+      <div class="icons">
+        <div class="demo">1</div>
+        <div class="demo active">2</div>
+        <div class="demo">3</div>
+        <div class="demo">4</div>
+        <div class="demo">5</div>
+      </div>
+      <h5>Information about energy consumption</h5>
+      <img src="./images/line1 (1).png" alt="">
+    </div>
+    <form>
+      <div class="smalltag">
+        <label for="Natural gas">Natural gas</label>
+        <div class="oil">
+          <small>Area in m3</small>
+          <input type="text" class="text1" required>
         </div>
-        <form>
-            <div class="smalltag">
-                <label for="Natural gas">Natural gas</label>
-                <div class="oil">
-                    <small>Area in m3</small>
-                    <input type="text" class="text1">
-                </div>
-            </div>
+      </div>
 
-            <div class="smalltag">
-                <label for="Heating oil">Heating oil</label>
+      <div class="smalltag">
+        <label for="Heating oil">Heating oil</label>
 
-                <div class="oil">
-                    <small>Area in litre</small>
-                    <input type="text" class="text2">
-                </div>
-            </div>
-        </form>
-        <div class="consumption">
-            <h4>I don't know the consumption</h4>
-            <div class="mycheckbox">
-                <input type="checkbox" id="myCheckbox" class="checkbox1" name="myCheckbox">
-                <label for="myCheckbox">Natural gas</label><br>
-            </div>
-            <div class="mycheckbox">
-                <input type="checkbox" id="myCheckbox"  class="checkbox2" name="myCheckbox">
-                <label for="myCheckbox">Heating oil</label><br>
-            </div>
+        <div class="oil">
+          <small>Area in litre</small>
+          <input type="text" class="text2" required>
+        </div>
+      </div>
+    </form>
+    <div class="consumption">
+      <h4>I don't know the consumption</h4>
+      <div class="mycheckbox">
+        <input type="checkbox" id="myCheckbox" class="checkbox1" name="myCheckbox">
+        <label for="myCheckbox">Natural gas</label><br>
+      </div>
+      <div class="mycheckbox">
+        <input type="checkbox" id="myCheckbox" class="checkbox2" name="myCheckbox">
+        <label for="myCheckbox">Heating oil</label><br>
+      </div>
 
 
-            <div class="btn">
-                <div class=".button">
-                    <a  href="./index2.html"><i class="material-icons">chevron_left</i>Back</a>
-                </div>
-                <div class="button" id="abc">
-                    <a  href="./index4.html" >Forward <i class="material-icons " >chevron_right</i></a>
+      <div class="btn">
+        <div class=".button">
+          <a href="./index2.html"><i class="material-icons">chevron_left</i>Back</a>
+        </div>
+        <div class="button" id="abc">
+          <a href="#" id="index3" class="disabled">Forward <i class="material-icons ">chevron_right</i></a>
 
-                </div>
-            </div>
+        </div>
+      </div>
+      <div class="popup" id="popup" style="display:none">
+        <p>Please select any of them</p>
+        <button  class="close">ok</button>
+    </div>
     </div>
    
     <script>
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const inputs = document.querySelectorAll('input[type="text"]');
-          let prevent = true;
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const inputs = document.querySelectorAll('input[type="text"]');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          if (this.checked) {
+            checkboxes.forEach(otherCheckbox => {
+              if (otherCheckbox !== this) {
+                otherCheckbox.disabled = true;
+              }
+            });
+            inputs.forEach(input => {
+              input.disabled = true;
+              enableindex3();
+            });
+
+          } else {
+            checkboxes.forEach(otherCheckbox => {
+              otherCheckbox.disabled = false;
+            });
+            inputs.forEach(input => {
+              input.disabled = false;
+              disableindex3();
+            });
+          }
+        });
+      });
 
 
-        
+
+      inputs.forEach(input => {
+        input.addEventListener('input', function () {
+          if (this.value !== '') {
+            inputs.forEach(otherinput => {
+              if (otherinput !== this) {
+                otherinput.disabled = true;
+              }
+            });
+            checkboxes.forEach(checkbox => {
+              checkbox.disabled = true;
+              enableindex3();
+            });
+
+          } else {
+            inputs.forEach(otherinput => {
+              otherinput.disabled = false;
+            });
+            checkboxes.forEach(checkbox => {
+              checkbox.disabled = false;
+              disableindex3();
+            });
+          }
+        });
+      });
+
+
+
+      const index3 = document.getElementById('index3');
+
+
+      index3.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default behavior of the anchor tag
+
+        // Check if the anchor tag is not disabled
+        if (!index3.classList.contains('disabled')) {
+          // Perform the desired page navigation
+            location.href='./index4.html';
+           // Change the URL to your desired location
+        }
+      });
+
+
+
+      // To disable the anchor tag
+      function disableindex3() {
+        index3.classList.add('disabled');
+
+      }
+
+      // To enable the anchor tag
+      function enableindex3() {
+        index3.classList.remove('disabled');
+      }
+
+      //    POPUP
+
+      index3.addEventListener('click', (e) => {
+    e.preventDefault();
+    // const confirmation = confirm('please select something');
+   
+    if (index3.classList.contains('disabled')) {
+        document.getElementById('popup').style.display = "block";
+        // confirm('please select something');
+      }
+    });
+
+    
+    //    close button in popup
      
-         
-        checkboxes.forEach(checkbox => {
-          checkbox.addEventListener('change', function() {
-            if (this.checked) {
-              checkboxes.forEach(otherCheckbox => {
-                if (otherCheckbox !== this) {
-                  otherCheckbox.disabled = true;
-                }
-              });
-              inputs.forEach(input => {
-                input.disabled = true;
-              });
-        
-            } else {
-              checkboxes.forEach(otherCheckbox => {
-                otherCheckbox.disabled = false;
-              });
-              inputs.forEach(input => {
-                input.disabled = false;
-              });
-            }
-          });
-        });
-        
+    const closebutton = document.querySelector('.close');
 
-       
-        inputs.forEach(input => {
-          input.addEventListener('input', function() {
-            if (this.value!=='') {
-              inputs.forEach(otherinput => {
-                if (otherinput !== this) {
-                  otherinput.disabled = true;
-                }
-              });
-                 checkboxes.forEach(checkbox => {
-                checkbox.disabled = true;
-              });
-        
-            } else {
-              inputs.forEach(otherinput => {
-                otherinput.disabled = false;
-              });
-              checkboxes.forEach(checkbox => {
-                checkbox.disabled = false;
-              });
-            }
-          });
-        });
-       
-        </script>
+    closebutton.addEventListener('click', (e)=>{
+        popup.style.display = "none";
+        e.preventDefault();
+    })
+
+
+    </script>
+  
 </body>
 
 </html>
