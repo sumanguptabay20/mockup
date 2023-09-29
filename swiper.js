@@ -2,10 +2,10 @@
 
 $('.demo-crausel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:20,
     nav:true,
     items:2,
-    autoplay: true
+    autoplay: false
 })
 
 $('.team-crausel').owlCarousel({
