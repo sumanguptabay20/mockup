@@ -1,0 +1,31 @@
+
+768
+1024
+1496
+324
+\
+
+
+
+
+479
+639
+767
+1023
+1259
+1366
+/* 1640   container 
+1920  */
+    
+480 min
+640
+768
+1024
+1260
+1367
+
+@media (max-width:479px) {
+    .travel-business-consumer {
+        grid-template-columns: auto auto;
+    }
+}
